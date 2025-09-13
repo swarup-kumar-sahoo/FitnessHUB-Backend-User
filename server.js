@@ -34,6 +34,14 @@ db.query(createTableQuery)
 
 // ---------------- Routes ---------------- //
 
+app.get('/', (req, res) => {
+  res.send('FitnessHub Backend is running');
+});
+
+app.get('/health', (req, res) => {
+  res.json({ status: 'ok' });
+});
+
 // Get all users
 app.get('/users', async (req, res) => {
   try {
